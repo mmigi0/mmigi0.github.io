@@ -1,1 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Projects - Miguel Bustaleno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #171717;
+            --secondary-bg: #222;
+            --text-color: #fff;
+            --border-color: #333;
+            --accent-color: #ccc;
+            --highlight-color: #e8491d;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--primary-bg);
+        }
+        
+        /* Back Button (Option 1) */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 44px;
+            height: 44px;
+            background: rgba(23, 23, 23, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+            text-decoration: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-button:hover {
+            background: var(--highlight-color);
+            transform: translateX(-4px);
+            border-color: var(--highlight-color);
+        }
+        
+        header {
+            background: var(--primary-bg);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            background: var(--primary-bg);
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        nav a.active {
+            color: var(--highlight-color);
+            font-weight: bold;
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--highlight-color);
+        }
+        
+        section {
+            padding: 2rem 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .video-container {
+            margin-top: 2rem;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        video {
+            width: 100%;
+            display: block;
+        }
+        
+        .video-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        @media (max-width: 600px) {
+            .back-button {
+                width: 36px;
+                height: 36px;
+                top: 15px;
+                left: 15px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="index.html" class="back-button" aria-label="Return to homepage">
+        <i class="fas fa-arrow-left"></i>
+    </a>
 
+    <header>
+        <img src="images/your-profile-image.jpg" alt="Miguel Bustaleno" class="profile-picture">
+        <h1>Miguel Alfonzo P. Bustaleno</h1>
+        <p class="subtitle">Artist | Student</p>
+    </header>
+
+    <nav>
+        <a href="index.html">About</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="personal-works.html">Personal Works</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Professional Projects</h2>
+        
+        <div class="video-title">Mahoraga Animation</div>
+        
+        <div class="video-container">
+            <video controls>
+                <source src="https://ia600303.us.archive.org/28/items/copy_839653C5-D1A9-40BB-9CEF-9599672E5865/copy_839653C5-D1A9-40BB-9CEF-9599672E5865.mov" type="video/mp4">
+                Your browser doesn't support HTML5 video.
+            </video>
+        </div>
+    </section>
+</body>
+</html>
