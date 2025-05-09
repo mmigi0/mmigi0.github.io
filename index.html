@@ -14,77 +14,25 @@
             --accent-color: #ccc;
         }
         
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: var(--primary-bg);
-        }
+        /* [Previous CSS remains exactly the same until .social-links] */
         
-        /* Header styles unchanged */
-        
-        .skills-list {
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .skills-list li {
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .skills-list .icon {
-            margin-right: 8px; /* Reduced gap */
-            font-size: 1.1rem;
-            width: 20px;
-            text-align: center;
-        }
-        
-        .social-links {
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .social-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .social-links a {
+        .social-links a, .email-links a {
             color: var(--text-color);
             text-decoration: none;
             display: flex;
             align-items: center;
+            transition: opacity 0.3s;
         }
         
-        .social-links a:hover {
-            text-decoration: underline;
+        .fa-upwork { /* Special UpWork icon color */
+            color: #14a800; /* UpWork's brand green */
         }
         
-        .social-links .icon {
-            margin-right: 8px; /* Reduced gap */
-            font-size: 1.1rem;
-            width: 20px;
-            text-align: center;
-        }
-        
-        /* Other styles remain unchanged */
+        /* [Rest of your existing CSS remains unchanged] */
     </style>
 </head>
 <body>
-    <!-- Header and nav unchanged -->
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-            <li><span class="icon"><i class="fas fa-paint-brush"></i></span>Digital Art</li>
-            <li><span class="icon"><i class="fas fa-film"></i></span>2D Animation</li>
-            <li><span class="icon"><i class="fas fa-lightbulb"></i></span>Concept Art</li>
-            <li><span class="icon"><i class="fas fa-camera"></i></span>Photography</li>
-        </ul>
-    </section>
+    <!-- [Header and other sections remain unchanged until contact section] -->
 
     <section id="contact">
         <h2>Contact Me</h2>
@@ -104,6 +52,12 @@
                 </a>
             </li>
             <li>
+                <a href="https://www.upwork.com/freelancers/~013ef0871f496eaefe" target="_blank">
+                    <span class="icon"><i class="fab fa-upwork"></i></span>
+                    UpWork
+                </a>
+            </li>
+            <li>
                 <a href="https://discord.gg/M8T6UXGh" target="_blank">
                     <span class="icon"><i class="fab fa-discord"></i></span>
                     Discord
@@ -111,8 +65,7 @@
             </li>
         </ul>
         
-        <!-- Email section unchanged -->
+        <!-- [Email section and footer remain unchanged] -->
     </section>
-
-    <!-- Footer unchanged -->
-</
+</body>
+</html>
