@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Projects - Miguel Bustaleno</title>
+    <title>Projects - Miguel Bustaleno</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -88,7 +88,7 @@
         
         section {
             padding: 2rem 1.5rem;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             border-bottom: 1px solid var(--border-color);
         }
@@ -100,23 +100,55 @@
             text-align: center;
         }
         
-        .video-container {
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
             margin-top: 2rem;
-            background: #000;
+        }
+        
+        .project-item {
+            background: var(--secondary-bg);
             border-radius: 8px;
             overflow: hidden;
+            transition: transform 0.3s ease;
         }
         
-        video {
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-image {
             width: 100%;
-            display: block;
+            height: 200px;
+            object-fit: contain;
+            background: #000;
         }
         
-        .video-title {
+        .project-caption {
+            padding: 1rem;
             text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--text-color);
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* Tablet/iPad (768px and up) */
+        @media (min-width: 768px) {
+            .project-gallery {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        /* Desktop/Windows (1024px and up) */
+        @media (min-width: 1024px) {
+            .project-gallery {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2.5rem;
+            }
+            
+            .project-image {
+                height: 250px;
+            }
         }
         
         @media (max-width: 600px) {
@@ -151,15 +183,23 @@
     </nav>
 
     <section>
-        <h2>Professional Projects</h2>
+        <h2>Projects</h2>
         
-        <div class="video-title">Mahoraga Animation</div>
-        
-        <div class="video-container">
-            <video controls poster="Image Source/Art Source/Mahoraga Animation Thumbnail.jpeg">
-                <source src="https://ia600303.us.archive.org/28/items/copy_839653C5-D1A9-40BB-9CEF-9599672E5865/copy_839653C5-D1A9-40BB-9CEF-9599672E5865.mov" type="video/mp4">
-                Your browser doesn't support HTML5 video.
-            </video>
+        <div class="project-gallery">
+            <div class="project-item">
+                <img src="Image Source/Art Source/IGNITE SOCIETY Logo.png" alt="IGNITE Society Logo" class="project-image">
+                <div class="project-caption">IGNITE Society</div>
+            </div>
+            
+            <div class="project-item">
+                <img src="Image Source/Art Source/IGNITE Club Banner.png" alt="IGNITE Club Banner" class="project-image">
+                <div class="project-caption">IGNITE Banner</div>
+            </div>
+            
+            <div class="project-item">
+                <img src="Image Source/Art Source/Work Immersion Uniform.png" alt="Work Immersion Uniform" class="project-image">
+                <div class="project-caption">Uniform Design</div>
+            </div>
         </div>
     </section>
 </body>
