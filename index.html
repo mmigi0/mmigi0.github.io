@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miguel Bustaleno - Artist Portfolio</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-bg: #171717;
@@ -24,7 +26,7 @@
         
         header {
             background: var(--primary-bg);
-            padding: 1.5rem 0;
+            padding: 1.5rem 1rem;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
@@ -41,6 +43,7 @@
         h1 {
             font-size: 1.5rem;
             margin: 0 auto;
+            padding: 0 1rem;
             max-width: 90%;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -59,18 +62,23 @@
             background: var(--primary-bg);
             padding: 0.8rem;
             border-bottom: 1px solid var(--border-color);
+            gap: 1.5rem;
         }
         
         nav a {
             color: var(--text-color);
             text-decoration: none;
-            padding: 0 1rem;
             font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
         }
         
         section {
-            padding: 2rem;
-            max-width: 1000px;
+            padding: 2rem 1.5rem;
+            max-width: 800px;
             margin: 0 auto;
             border-bottom: 1px solid var(--border-color);
         }
@@ -78,28 +86,43 @@
         h2 {
             font-size: 1.5rem;
             margin-top: 0;
+            margin-bottom: 1.2rem;
         }
         
         h3 {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            margin: 1.5rem 0 1rem;
         }
         
         ul {
-            padding-left: 1.2rem;
+            padding-left: 0;
+            list-style: none;
         }
         
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
         }
         
-        a {
+        .social-links a, .email-links a {
             color: var(--text-color);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: opacity 0.3s;
         }
         
-        a:hover {
+        .social-links a:hover, .email-links a:hover {
+            opacity: 0.8;
             text-decoration: underline;
+        }
+        
+        .icon {
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
         }
         
         footer {
@@ -110,13 +133,14 @@
             font-size: 0.9rem;
         }
         
-        .social-links, .email-links {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .social-links li, .email-links li {
-            margin-bottom: 0.8rem;
+        @media (min-width: 600px) {
+            section {
+                padding: 2.5rem;
+            }
+            
+            nav {
+                gap: 2rem;
+            }
         }
     </style>
 </head>
@@ -142,10 +166,10 @@
     <section id="skills">
         <h2>Skills</h2>
         <ul>
-            <li>Digital Art</li>
-            <li>2D Animation</li>
-            <li>Concept Art</li>
-            <li>Photography</li>
+            <li><span class="icon"><i class="fas fa-paint-brush"></i></span> Digital Art</li>
+            <li><span class="icon"><i class="fas fa-film"></i></span> 2D Animation</li>
+            <li><span class="icon"><i class="fas fa-lightbulb"></i></span> Concept Art</li>
+            <li><span class="icon"><i class="fas fa-camera"></i></span> Photography</li>
         </ul>
     </section>
 
@@ -154,16 +178,46 @@
         
         <h3>My Accounts</h3>
         <ul class="social-links">
-            <li><a href="https://www.facebook.com/mmigi.2607?" target="_blank">Facebook</a></li>
-            <li><a href="https://www.instagram.com/mmigi._?igsh=b3dybHg5bG5iN2s0&utm_source=qr" target="_blank">Instagram</a></li>
-            <li><a href="https://www.upwork.com/freelancers/~013ef0871f496eaefe" target="_blank">UpWork</a></li>
-            <li><a href="https://discord.gg/M8T6UXGh" target="_blank">Discord</a></li>
+            <li>
+                <a href="https://www.facebook.com/mmigi.2607?" target="_blank">
+                    <span class="icon"><i class="fab fa-facebook-f"></i></span>
+                    Facebook
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/mmigi._?igsh=b3dybHg5bG5iN2s0&utm_source=qr" target="_blank">
+                    <span class="icon"><i class="fab fa-instagram"></i></span>
+                    Instagram
+                </a>
+            </li>
+            <li>
+                <a href="https://www.upwork.com/freelancers/~013ef0871f496eaefe" target="_blank">
+                    <span class="icon"><i class="fab fa-upwork"></i></span>
+                    UpWork
+                </a>
+            </li>
+            <li>
+                <a href="https://discord.gg/M8T6UXGh" target="_blank">
+                    <span class="icon"><i class="fab fa-discord"></i></span>
+                    Discord
+                </a>
+            </li>
         </ul>
         
         <h3>Email me</h3>
         <ul class="email-links">
-            <li>Work: <a href="mailto:bustaleno.miguel@outlook.ph">bustaleno.miguel@outlook.ph</a></li>
-            <li>Personal: <a href="mailto:bustalenomiguel@gmail.com">bustalenomiguel@gmail.com</a></li>
+            <li>
+                <a href="mailto:bustaleno.miguel@outlook.ph">
+                    <span class="icon"><i class="fas fa-briefcase"></i></span>
+                    Work: bustaleno.miguel@outlook.ph
+                </a>
+            </li>
+            <li>
+                <a href="mailto:bustalenomiguel@gmail.com">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    Personal: bustalenomiguel@gmail.com
+                </a>
+            </li>
         </ul>
     </section>
 
