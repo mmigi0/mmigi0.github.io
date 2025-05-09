@@ -12,6 +12,7 @@
             --text-color: #fff;
             --border-color: #333;
             --accent-color: #ccc;
+            --highlight-color: #e8491d; /* New highlight color */
         }
         
         body {
@@ -69,10 +70,26 @@
             text-decoration: none;
             font-size: 0.9rem;
             transition: opacity 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
         }
         
         nav a:hover {
             opacity: 0.8;
+        }
+        
+        nav a.active {
+            font-weight: bold;
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--highlight-color);
         }
         
         section {
@@ -83,13 +100,32 @@
         }
         
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Slightly larger for emphasis */
             margin-top: 0;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--highlight-color);
+        }
+        
+        #portfolio h2 {
+            font-size: 2rem; /* Even larger for portfolio */
+        }
+        
+        #portfolio h2::after {
+            width: 80px; /* Longer underline for portfolio */
         }
         
         h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin: 1.5rem 0 1rem;
         }
         
@@ -127,13 +163,63 @@
             text-decoration: underline;
         }
         
-        .fa-upwork {
-            color: #14a800;
+        .portfolio-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .portfolio-card {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--highlight-color);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-card:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .portfolio-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .portfolio-card p {
+            color: var(--accent-color);
+            margin-bottom: 0;
+            line-height: 1.5;
         }
         
         footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
             background: var(--primary-bg);
             color: var(--text-color);
             font-size: 0.9rem;
@@ -141,11 +227,15 @@
         
         @media (min-width: 600px) {
             section {
-                padding: 2.5rem;
+                padding: 3rem;
             }
             
             nav {
                 gap: 2rem;
+            }
+            
+            #portfolio h2 {
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -160,9 +250,24 @@
 
     <nav>
         <a href="#about">About</a>
+        <a href="#portfolio" class="active">Portfolio</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-preview">
+            <a href="projects.html" class="portfolio-card">
+                <h3>Professional Projects</h3>
+                <p>View my commissioned works and client collaborations</p>
+            </a>
+            <a href="personal-works.html" class="portfolio-card">
+                <h3>Personal Works</h3>
+                <p>Explore my creative experiments and passion projects</p>
+            </a>
+        </div>
+    </section>
 
     <section id="about">
         <h2>About Me</h2>
