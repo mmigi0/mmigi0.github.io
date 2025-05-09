@@ -24,7 +24,7 @@
         
         header {
             background: var(--primary-bg);
-            padding: 1.5rem 1rem;
+            padding: 1.5rem 0;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
         }
@@ -41,7 +41,6 @@
         h1 {
             font-size: 1.5rem;
             margin: 0 auto;
-            padding: 0 1rem;
             max-width: 90%;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -54,18 +53,70 @@
             font-size: 0.9rem;
         }
         
-        /* Navigation and other existing styles remain the same */
-        
-        /* Skills Section Update */
-        #skills ul {
-            columns: 2;
-            column-gap: 2rem;
+        nav {
+            display: flex;
+            justify-content: center;
+            background: var(--primary-bg);
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
         }
         
-        @media (max-width: 600px) {
-            #skills ul {
-                columns: 1;
-            }
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0 1rem;
+            font-size: 0.9rem;
+        }
+        
+        section {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--primary-bg);
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+        
+        .social-links, .email-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .social-links li, .email-links li {
+            margin-bottom: 0.8rem;
         }
     </style>
 </head>
@@ -77,7 +128,11 @@
         <p class="subtitle">Artist | Student</p>
     </header>
 
-    <!-- Navigation remains unchanged -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
     <section id="about">
         <h2>About Me</h2>
